@@ -1,3 +1,3 @@
-# template
+# Dynamic User Interface Interactions #
 
-An attempt to create a template for future projects
+[TOP](https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions) project for creating a dropdown menu and image carousel
