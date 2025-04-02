@@ -78,7 +78,17 @@ a {
   display: none;
 }
 
+/* Image Carousel Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.carousel {
+  width: 60dvw;
+  border: 1px solid black;
+}
 
 /* The browser correctly supports hyphenation */
 p[lang="en"] {
