@@ -1,6 +1,8 @@
-/* Reset */
+/* Reset and Variables */
 :root {
   line-height: 1.5;
+  --header-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --text-font: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1,
@@ -33,4 +35,61 @@ h5 {
 img {
   display: block;
   max-inline-size: 100%;
+}
+
+/* Text Sizing, Spacing, and Fonts */
+h1 {
+  font-size: 2.5em;
+  font-family: var(--header-font);
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: var(--header-font);
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
+}
+
+h3 {
+  font-family: var(--header-font) ;
+  font-size: 1.75em;
+  line-height: calc(1ex / 0.38);
+  margin: calc(1ex / 0.38) 0;
+}
+
+p {
+  font-family: var(--text-font);
+  font-size: 1em;
+  line-height: calc(1ex / 0.32);
+  margin: calc(1ex / 0.32) 0;
+  width: 60ch;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-family: var(--text-font);
+}
+
+
+
+/* The browser correctly supports hyphenation */
+p[lang="en"] {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* The browser does NOT correctly support hyphenation */
+p[lang="it"] {
+  text-align: left;
+  hyphens: none;
+}
+
+/* Optically render fonts to be the same size */
+@supports (font-size-adjust: 1) {
+  article {
+      font-size-adjust: 0.5;
+  }
 }
