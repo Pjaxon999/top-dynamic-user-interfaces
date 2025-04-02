@@ -73,6 +73,11 @@ a {
   font-family: var(--text-font);
 }
 
+/* Dropdown Menu Styles */
+.hidden {
+  display: none;
+}
+
 
 
 /* The browser correctly supports hyphenation */
