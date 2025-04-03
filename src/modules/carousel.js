@@ -14,14 +14,25 @@ export default function carousel() {
         });
     }
 
+    // Set up an interval for the carousel to work as a slide show. Interval is cleared when new image is rendered below
+    let intervalId;
 
-    // Render function. Grab the current image, toggle it's class, update the index, grab the new image, toggle again
+    function slideshowSetUp() {
+        if (!intervalId) {
+            intervalId = setInterval(rightArrowHandler, 5000);
+        }
+    }
+
+    // Render function. Grab the current image, toggle it's class, update the index, grab the new image, toggle again, then reset the slideshow timer
     function renderCarousel(newIndex){
         const currentImage = document.querySelector(`[data-index = "${currentIndex}"]`);
         currentImage.classList.toggle("hidden");
         currentIndex = newIndex;
         const newImage = document.querySelector(`[data-index="${currentIndex}"]`);
         newImage.classList.toggle("hidden");
+        clearInterval(intervalId);
+        intervalId = null;
+        slideshowSetUp();
     }
     
 
@@ -69,7 +80,8 @@ export default function carousel() {
         rightArrow.addEventListener("click", rightArrowHandler);
         imageNavDots.forEach((button) => button.addEventListener("click", clickHandler));
     }
+    // Initialize carousel
     getImageData();
     attachEventListeners();
-
+    slideshowSetUp();
 }
